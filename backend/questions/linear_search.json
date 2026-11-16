@@ -1,0 +1,89 @@
+{
+  "id": "linear_search",
+  "title": "Find a Target Using Linear Search",
+  "topic": "Searching",
+  "difficulty": "easy",
+  "description": "Read N integers, then a target value. Print the zero-based index of the first occurrence of the target, or -1 if it is not present.",
+  "input_format": "First N (1 ≤ N ≤ 1000), then N integers, then the target integer.",
+  "output_format": "Print the zero-based index of the first matching element, otherwise -1.",
+  "examples": [
+    {
+      "input": "5\n3 7 2 9 5\n9",
+      "output": "3"
+    },
+    {
+      "input": "4\n1 4 6 8\n5",
+      "output": "-1"
+    }
+  ],
+  "test_cases": [
+    {
+      "input": "5\n3 7 2 9 5\n9",
+      "expected_output": "3"
+    },
+    {
+      "input": "4\n1 4 6 8\n5",
+      "expected_output": "-1"
+    },
+    {
+      "input": "1\n10\n10",
+      "expected_output": "0"
+    },
+    {
+      "input": "5\n2 4 2 8 2\n2",
+      "expected_output": "0"
+    },
+    {
+      "input": "3\n-5 0 5\n-5",
+      "expected_output": "0"
+    }
+  ],
+  "starter_code": {
+    "Python": "n = int(input())\nnumbers = list(map(int, input().split()))\ntarget = int(input())\nanswer = -1\nfor index in range(n):\n    if numbers[index] == target:\n        answer = index\n        break\nprint(answer)",
+    "C": "#include <stdio.h>\nint main(void) {\n    int n, values[1000], target, answer = -1;\n    if (scanf(\"%d\", &n) != 1) return 0;\n    for (int i = 0; i < n; i++) scanf(\"%d\", &values[i]);\n    scanf(\"%d\", &target);\n    for (int i = 0; i < n; i++) { if (values[i] == target) { answer = i; break; } }\n    printf(\"%d\\n\", answer);\n    return 0;\n}",
+    "C++": "#include <iostream>\nusing namespace std;\nint main() {\n    int n, values[1000], target, answer = -1;\n    cin >> n;\n    for (int i = 0; i < n; i++) cin >> values[i];\n    cin >> target;\n    for (int i = 0; i < n; i++) { if (values[i] == target) { answer = i; break; } }\n    cout << answer << endl;\n    return 0;\n}",
+    "Java": "import java.util.Scanner;\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        int[] values = new int[n];\n        for (int i = 0; i < n; i++) values[i] = sc.nextInt();\n        int target = sc.nextInt(), answer = -1;\n        for (int i = 0; i < n; i++) { if (values[i] == target) { answer = i; break; } }\n        System.out.println(answer);\n        sc.close();\n    }\n}"
+  },
+  "learning_content": {
+    "title": "Linear search",
+    "intro": "Linear search checks elements from left to right until it finds the target or reaches the end of the array. The first matching position is returned.",
+    "points": [
+      "Read N and the N array values.",
+      "Read the target value.",
+      "Start at index zero.",
+      "Compare each value with the target.",
+      "Stop at the first match; if no match exists, keep the answer as -1."
+    ],
+    "complexity": "O(n) time · O(1) extra space",
+    "note": "In the worst case, every element is inspected."
+  },
+  "quiz": [
+    {
+      "question": "If the target appears at indexes 1 and 4, which index should this task return?",
+      "options": [
+        {
+          "value": "A",
+          "label": "1",
+          "feedback": "The task requests the first occurrence, which is at index 1."
+        },
+        {
+          "value": "B",
+          "label": "4",
+          "feedback": "Index 4 is a later occurrence, not the first one."
+        },
+        {
+          "value": "C",
+          "label": "5",
+          "feedback": "The task uses zero-based indexes, not the one-based position."
+        },
+        {
+          "value": "D",
+          "label": "-1",
+          "feedback": "A matching target is present, so -1 is not appropriate."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "Linear search stops at the first match, and indexes are zero-based."
+    }
+  ]
+}

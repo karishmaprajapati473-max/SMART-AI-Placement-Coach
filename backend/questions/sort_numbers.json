@@ -1,0 +1,89 @@
+{
+  "id": "sort_numbers",
+  "title": "Sort Numbers in Ascending Order",
+  "topic": "Sorting",
+  "difficulty": "easy",
+  "description": "Read N integers and print them in ascending order, separated by single spaces.",
+  "input_format": "First N (1 ≤ N ≤ 1000), followed by N integers.",
+  "output_format": "Print all N integers in non-decreasing order on one line.",
+  "examples": [
+    {
+      "input": "5\n4 1 3 2 5",
+      "output": "1 2 3 4 5"
+    },
+    {
+      "input": "4\n9 -1 9 0",
+      "output": "-1 0 9 9"
+    }
+  ],
+  "test_cases": [
+    {
+      "input": "5\n4 1 3 2 5",
+      "expected_output": "1 2 3 4 5"
+    },
+    {
+      "input": "4\n9 -1 9 0",
+      "expected_output": "-1 0 9 9"
+    },
+    {
+      "input": "1\n7",
+      "expected_output": "7"
+    },
+    {
+      "input": "5\n3 3 2 2 1",
+      "expected_output": "1 2 2 3 3"
+    },
+    {
+      "input": "4\n0 -5 8 -2",
+      "expected_output": "-5 -2 0 8"
+    }
+  ],
+  "starter_code": {
+    "Python": "n = int(input())\nnumbers = list(map(int, input().split()))\nnumbers.sort()\nprint(\" \".join(map(str, numbers[:n])))",
+    "C": "#include <stdio.h>\nint main(void) {\n    int n, a[1000];\n    if (scanf(\"%d\", &n) != 1) return 0;\n    for (int i = 0; i < n; i++) scanf(\"%d\", &a[i]);\n    for (int i = 0; i < n; i++) {\n        for (int j = 0; j + 1 < n - i; j++) {\n            if (a[j] > a[j + 1]) { int t = a[j]; a[j] = a[j + 1]; a[j + 1] = t; }\n        }\n    }\n    for (int i = 0; i < n; i++) printf(\"%s%d\", i ? \" \" : \"\", a[i]);\n    printf(\"\\n\");\n    return 0;\n}",
+    "C++": "#include <iostream>\n#include <algorithm>\nusing namespace std;\nint main() {\n    int n, a[1000]; cin >> n;\n    for (int i = 0; i < n; i++) cin >> a[i];\n    sort(a, a + n);\n    for (int i = 0; i < n; i++) cout << (i ? \" \" : \"\") << a[i];\n    cout << endl;\n    return 0;\n}",
+    "Java": "import java.util.Arrays;\nimport java.util.Scanner;\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        int[] a = new int[n];\n        for (int i = 0; i < n; i++) a[i] = sc.nextInt();\n        Arrays.sort(a);\n        for (int i = 0; i < n; i++) { if (i > 0) System.out.print(\" \"); System.out.print(a[i]); }\n        System.out.println();\n        sc.close();\n    }\n}"
+  },
+  "learning_content": {
+    "title": "Sorting and ordering",
+    "intro": "Sorting arranges values in a requested order. Ascending order means every element is less than or equal to the element that follows it.",
+    "points": [
+      "Read the number of values.",
+      "Store all values in an array or list.",
+      "Apply a sorting algorithm or library sort.",
+      "Print the sorted values with spaces between them.",
+      "Preserve repeated values; sorting does not remove duplicates."
+    ],
+    "complexity": "O(n log n) time for the supplied library-sort approaches; O(n²) for the C bubble-sort starter · O(n) or implementation-dependent extra space",
+    "note": "The C starter uses bubble sort for clarity; the other language starters use standard library sorting."
+  },
+  "quiz": [
+    {
+      "question": "What does ascending order require for each adjacent pair in the sorted output?",
+      "options": [
+        {
+          "value": "A",
+          "label": "The left value is greater than the right value",
+          "feedback": "That condition describes descending order."
+        },
+        {
+          "value": "B",
+          "label": "The left value is less than or equal to the right value",
+          "feedback": "This is the non-decreasing condition for ascending order."
+        },
+        {
+          "value": "C",
+          "label": "All values must be distinct",
+          "feedback": "Sorting preserves duplicates; uniqueness is not required."
+        },
+        {
+          "value": "D",
+          "label": "All negative values must be removed",
+          "feedback": "Sorting changes order, not which values are included."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "Ascending non-decreasing order satisfies a[i] <= a[i+1] for every adjacent pair."
+    }
+  ]
+}

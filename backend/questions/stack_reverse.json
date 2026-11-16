@@ -1,0 +1,89 @@
+{
+  "id": "stack_reverse",
+  "title": "Reverse a Sequence Using a Stack",
+  "topic": "Basic Data Structures",
+  "difficulty": "easy",
+  "description": "Read N integers, push them onto a stack, then print them in reverse order by popping the stack.",
+  "input_format": "First N (1 ≤ N ≤ 1000), followed by N integers.",
+  "output_format": "Print the values in reverse order, separated by single spaces.",
+  "examples": [
+    {
+      "input": "5\n1 2 3 4 5",
+      "output": "5 4 3 2 1"
+    },
+    {
+      "input": "3\n8 -1 6",
+      "output": "6 -1 8"
+    }
+  ],
+  "test_cases": [
+    {
+      "input": "5\n1 2 3 4 5",
+      "expected_output": "5 4 3 2 1"
+    },
+    {
+      "input": "3\n8 -1 6",
+      "expected_output": "6 -1 8"
+    },
+    {
+      "input": "1\n9",
+      "expected_output": "9"
+    },
+    {
+      "input": "4\n2 2 1 1",
+      "expected_output": "1 1 2 2"
+    },
+    {
+      "input": "3\n-5 0 5",
+      "expected_output": "5 0 -5"
+    }
+  ],
+  "starter_code": {
+    "Python": "n = int(input())\nvalues = list(map(int, input().split()))\nstack = []\nfor value in values[:n]:\n    stack.append(value)\nreversed_values = []\nwhile stack:\n    reversed_values.append(str(stack.pop()))\nprint(\" \".join(reversed_values))",
+    "C": "#include <stdio.h>\nint main(void) {\n    int n, stack[1000];\n    if (scanf(\"%d\", &n) != 1) return 0;\n    for (int i = 0; i < n; i++) scanf(\"%d\", &stack[i]);\n    for (int i = n - 1; i >= 0; i--) printf(\"%s%d\", i == n - 1 ? \"\" : \" \", stack[i]);\n    printf(\"\\n\");\n    return 0;\n}",
+    "C++": "#include <iostream>\n#include <stack>\nusing namespace std;\nint main() {\n    int n, value; cin >> n;\n    stack<int> st;\n    for (int i = 0; i < n; i++) { cin >> value; st.push(value); }\n    bool first = true;\n    while (!st.empty()) { if (!first) cout << \" \"; cout << st.top(); st.pop(); first = false; }\n    cout << endl;\n    return 0;\n}",
+    "Java": "import java.util.Scanner;\nimport java.util.ArrayDeque;\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        ArrayDeque<Integer> stack = new ArrayDeque<>();\n        for (int i = 0; i < n; i++) stack.push(sc.nextInt());\n        StringBuilder out = new StringBuilder();\n        while (!stack.isEmpty()) { if (out.length() > 0) out.append(\" \"); out.append(stack.pop()); }\n        System.out.println(out);\n        sc.close();\n    }\n}"
+  },
+  "learning_content": {
+    "title": "Stacks and last-in, first-out",
+    "intro": "A stack is a linear data structure that follows last-in, first-out (LIFO). The most recently pushed value is the first value popped.",
+    "points": [
+      "Read N values.",
+      "Push each value onto the stack in input order.",
+      "Repeatedly pop the top value.",
+      "Append each popped value to the output.",
+      "Print the values in the order they were popped."
+    ],
+    "complexity": "O(n) time · O(n) extra space",
+    "note": "Each value is pushed once and popped once."
+  },
+  "quiz": [
+    {
+      "question": "A stack receives 2, then 5, then 7. Which value is popped first?",
+      "options": [
+        {
+          "value": "A",
+          "label": "2",
+          "feedback": "2 was pushed first and is at the bottom of the stack."
+        },
+        {
+          "value": "B",
+          "label": "5",
+          "feedback": "5 is below 7, so it is not popped first."
+        },
+        {
+          "value": "C",
+          "label": "7",
+          "feedback": "7 was pushed last, so it is on top and is popped first."
+        },
+        {
+          "value": "D",
+          "label": "All three at once",
+          "feedback": "A standard stack pop removes one top element at a time."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "Stacks use LIFO: last in, first out."
+    }
+  ]
+}

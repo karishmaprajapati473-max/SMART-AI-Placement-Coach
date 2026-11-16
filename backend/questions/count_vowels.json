@@ -1,0 +1,89 @@
+{
+  "id": "count_vowels",
+  "title": "Count Vowels in a String",
+  "topic": "Strings",
+  "difficulty": "easy",
+  "description": "Read one complete line of text and print the number of English vowels (a, e, i, o, u), ignoring letter case.",
+  "input_format": "One line of text; it may contain spaces and uppercase letters.",
+  "output_format": "Print one integer: the number of vowels.",
+  "examples": [
+    {
+      "input": "Placement Coach",
+      "output": "5"
+    },
+    {
+      "input": "HELLO",
+      "output": "2"
+    }
+  ],
+  "test_cases": [
+    {
+      "input": "Placement Coach",
+      "expected_output": "5"
+    },
+    {
+      "input": "HELLO",
+      "expected_output": "2"
+    },
+    {
+      "input": "xyz",
+      "expected_output": "0"
+    },
+    {
+      "input": "Education",
+      "expected_output": "5"
+    },
+    {
+      "input": "Open AI",
+      "expected_output": "4"
+    }
+  ],
+  "starter_code": {
+    "Python": "text = input()\nvowels = \"aeiou\"\ncount = 0\nfor char in text.lower():\n    if char in vowels:\n        count += 1\nprint(count)",
+    "C": "#include <stdio.h>\n#include <ctype.h>\nint main(void) {\n    char text[4096];\n    if (!fgets(text, sizeof(text), stdin)) return 0;\n    int count = 0;\n    for (int i = 0; text[i] != '\\0'; i++) {\n        char ch = (char)tolower((unsigned char)text[i]);\n        if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') count++;\n    }\n    printf(\"%d\\n\", count);\n    return 0;\n}",
+    "C++": "#include <iostream>\n#include <string>\n#include <cctype>\nusing namespace std;\nint main() {\n    string text; getline(cin, text);\n    int count = 0;\n    for (unsigned char ch : text) {\n        char c = (char)tolower(ch);\n        if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u') count++;\n    }\n    cout << count << endl;\n    return 0;\n}",
+    "Java": "import java.util.Scanner;\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        String text = sc.hasNextLine() ? sc.nextLine() : \"\";\n        int count = 0;\n        for (int i = 0; i < text.length(); i++) {\n            char ch = Character.toLowerCase(text.charAt(i));\n            if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') count++;\n        }\n        System.out.println(count);\n        sc.close();\n    }\n}"
+  },
+  "learning_content": {
+    "title": "Strings and character traversal",
+    "intro": "A string is a sequence of characters. To count vowels without case sensitivity, convert each character to lowercase and test whether it belongs to the vowel set.",
+    "points": [
+      "Read the complete input line, including spaces.",
+      "Convert each character to lowercase for comparison.",
+      "Check whether the character is a, e, i, o or u.",
+      "Increase the counter when a vowel is found.",
+      "Print the final count."
+    ],
+    "complexity": "O(n) time · O(1) extra space",
+    "note": "Each character is checked once."
+  },
+  "quiz": [
+    {
+      "question": "Should the uppercase character E be counted as a vowel in this task?",
+      "options": [
+        {
+          "value": "A",
+          "label": "Yes, it is counted as e after case normalization",
+          "feedback": "The task ignores letter case, so uppercase E counts as a vowel."
+        },
+        {
+          "value": "B",
+          "label": "No, only lowercase vowels are counted",
+          "feedback": "The task explicitly requires case-insensitive counting."
+        },
+        {
+          "value": "C",
+          "label": "Only when it appears at the beginning",
+          "feedback": "Vowel counting does not depend on position."
+        },
+        {
+          "value": "D",
+          "label": "Only when it is next to a space",
+          "feedback": "Whitespace does not change whether a character is a vowel."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "Converting characters to lowercase makes uppercase E match the vowel e."
+    }
+  ]
+}

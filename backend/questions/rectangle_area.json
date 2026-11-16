@@ -1,0 +1,88 @@
+{
+  "id": "rectangle_area",
+  "title": "Calculate the Area of a Rectangle",
+  "topic": "Variables & Data Types",
+  "difficulty": "easy",
+  "description": "Read the width and height of a rectangle as integers and print its area.",
+  "input_format": "Two integers: width and height, separated by whitespace.",
+  "output_format": "Print width multiplied by height.",
+  "examples": [
+    {
+      "input": "5 4",
+      "output": "20"
+    },
+    {
+      "input": "7 3",
+      "output": "21"
+    }
+  ],
+  "test_cases": [
+    {
+      "input": "5 4",
+      "expected_output": "20"
+    },
+    {
+      "input": "7 3",
+      "expected_output": "21"
+    },
+    {
+      "input": "1 9",
+      "expected_output": "9"
+    },
+    {
+      "input": "12 10",
+      "expected_output": "120"
+    },
+    {
+      "input": "0 5",
+      "expected_output": "0"
+    }
+  ],
+  "starter_code": {
+    "Python": "width, height = map(int, input().split())\narea = width * height\nprint(area)",
+    "C": "#include <stdio.h>\nint main(void) {\n    int width, height;\n    if (scanf(\"%d %d\", &width, &height) != 2) return 0;\n    int area = width * height;\n    printf(\"%d\\n\", area);\n    return 0;\n}",
+    "C++": "#include <iostream>\nusing namespace std;\nint main() {\n    int width, height;\n    if (!(cin >> width >> height)) return 0;\n    int area = width * height;\n    cout << area << endl;\n    return 0;\n}",
+    "Java": "import java.util.Scanner;\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        int width = sc.nextInt();\n        int height = sc.nextInt();\n        int area = width * height;\n        System.out.println(area);\n        sc.close();\n    }\n}"
+  },
+  "learning_content": {
+    "title": "Variables, types and arithmetic",
+    "intro": "A variable stores a value under a name. Read both dimensions as integers, multiply them, and store the result before printing.",
+    "points": [
+      "Read width and height from standard input.",
+      "Use integer variables because the input values are whole numbers.",
+      "Multiply width by height to calculate the area.",
+      "Print only the numeric result."
+    ],
+    "complexity": "O(1) time · O(1) extra space",
+    "note": "The program performs a fixed number of input and arithmetic operations."
+  },
+  "quiz": [
+    {
+      "question": "If width is 6 and height is 4, what area should the program print?",
+      "options": [
+        {
+          "value": "A",
+          "label": "10",
+          "feedback": "Adding the dimensions gives 10, but area requires multiplication."
+        },
+        {
+          "value": "B",
+          "label": "24",
+          "feedback": "Multiplying 6 by 4 gives an area of 24."
+        },
+        {
+          "value": "C",
+          "label": "2",
+          "feedback": "Subtracting the dimensions gives 2, not the area."
+        },
+        {
+          "value": "D",
+          "label": "64",
+          "feedback": "Concatenating the digits does not calculate the area."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "Area = width × height = 6 × 4 = 24."
+    }
+  ]
+}

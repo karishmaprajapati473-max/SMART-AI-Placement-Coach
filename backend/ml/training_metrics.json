@@ -1,0 +1,175 @@
+{
+  "model_name": "tfidf_logistic_regression",
+  "dataset_kind": "curated_synthetic_starter_examples",
+  "dataset_rows": 96,
+  "train_rows": 72,
+  "test_rows": 24,
+  "class_distribution": {
+    "Syntax & Indentation": 12,
+    "Variables & Naming": 12,
+    "Data Types & Input Handling": 12,
+    "Arrays & Indexing": 12,
+    "Loops & Iteration": 12,
+    "Recursion": 12,
+    "Function Usage": 12,
+    "Algorithm Efficiency": 12
+  },
+  "accuracy_on_held_out_synthetic_examples": 0.7917,
+  "classification_report": {
+    "Algorithm Efficiency": {
+      "precision": 0.6666666666666666,
+      "recall": 0.6666666666666666,
+      "f1-score": 0.6666666666666666,
+      "support": 3.0
+    },
+    "Arrays & Indexing": {
+      "precision": 0.6666666666666666,
+      "recall": 0.6666666666666666,
+      "f1-score": 0.6666666666666666,
+      "support": 3.0
+    },
+    "Data Types & Input Handling": {
+      "precision": 1.0,
+      "recall": 0.6666666666666666,
+      "f1-score": 0.8,
+      "support": 3.0
+    },
+    "Function Usage": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 3.0
+    },
+    "Loops & Iteration": {
+      "precision": 0.4,
+      "recall": 0.6666666666666666,
+      "f1-score": 0.5,
+      "support": 3.0
+    },
+    "Recursion": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 3.0
+    },
+    "Syntax & Indentation": {
+      "precision": 1.0,
+      "recall": 0.6666666666666666,
+      "f1-score": 0.8,
+      "support": 3.0
+    },
+    "Variables & Naming": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 3.0
+    },
+    "accuracy": 0.7916666666666666,
+    "macro avg": {
+      "precision": 0.8416666666666666,
+      "recall": 0.7916666666666666,
+      "f1-score": 0.8041666666666667,
+      "support": 24.0
+    },
+    "weighted avg": {
+      "precision": 0.8416666666666667,
+      "recall": 0.7916666666666666,
+      "f1-score": 0.8041666666666667,
+      "support": 24.0
+    }
+  },
+  "confusion_matrix_labels": [
+    "Algorithm Efficiency",
+    "Arrays & Indexing",
+    "Data Types & Input Handling",
+    "Function Usage",
+    "Loops & Iteration",
+    "Recursion",
+    "Syntax & Indentation",
+    "Variables & Naming"
+  ],
+  "confusion_matrix": [
+    [
+      2,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      2,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      1,
+      2,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      3,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      1,
+      0,
+      0,
+      0,
+      2,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      3,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      2,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      3
+    ]
+  ],
+  "random_state": 42,
+  "warning": "This is a small synthetic starter dataset. Metrics are for pipeline smoke-testing only; do not claim real-world accuracy or production readiness."
+}

@@ -1,0 +1,88 @@
+{
+  "id": "sum_two_numbers",
+  "title": "Sum of Two Numbers",
+  "topic": "Basic Programming",
+  "difficulty": "easy",
+  "description": "Read two integers and print their sum.",
+  "input_format": "Two integers separated by whitespace.",
+  "output_format": "Print one integer: the sum of the two numbers.",
+  "examples": [
+    {
+      "input": "2 3",
+      "output": "5"
+    },
+    {
+      "input": "-4 7",
+      "output": "3"
+    }
+  ],
+  "test_cases": [
+    {
+      "input": "2 3",
+      "expected_output": "5"
+    },
+    {
+      "input": "-4 7",
+      "expected_output": "3"
+    },
+    {
+      "input": "0 0",
+      "expected_output": "0"
+    },
+    {
+      "input": "100 200",
+      "expected_output": "300"
+    },
+    {
+      "input": "-5 -8",
+      "expected_output": "-13"
+    }
+  ],
+  "starter_code": {
+    "Python": "first, second = map(int, input().split())\nprint(first + second)",
+    "C": "#include <stdio.h>\nint main(void) {\n    int first, second;\n    if (scanf(\"%d %d\", &first, &second) != 2) return 0;\n    printf(\"%d\\n\", first + second);\n    return 0;\n}",
+    "C++": "#include <iostream>\nusing namespace std;\nint main() { int first, second; cin >> first >> second; cout << first + second << endl; return 0; }",
+    "Java": "import java.util.Scanner;\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        int first = sc.nextInt();\n        int second = sc.nextInt();\n        System.out.println(first + second);\n        sc.close();\n    }\n}"
+  },
+  "learning_content": {
+    "title": "Input, variables and arithmetic",
+    "intro": "Read two integers into variables, add them and print the result. This exercise introduces standard input, variable assignment and arithmetic expressions.",
+    "points": [
+      "Read the first integer.",
+      "Read the second integer.",
+      "Add the two stored values.",
+      "Print the sum."
+    ],
+    "complexity": "O(1) time · O(1) extra space",
+    "note": "A fixed number of operations is performed."
+  },
+  "quiz": [
+    {
+      "question": "What is the sum of -4 and 7?",
+      "options": [
+        {
+          "value": "A",
+          "label": "-11",
+          "feedback": "Adding magnitudes and keeping the negative sign would be incorrect."
+        },
+        {
+          "value": "B",
+          "label": "-3",
+          "feedback": "-4 + 7 = 3, not -3."
+        },
+        {
+          "value": "C",
+          "label": "3",
+          "feedback": "Seven minus four equals three, and the positive value has the larger magnitude."
+        },
+        {
+          "value": "D",
+          "label": "11",
+          "feedback": "Adding absolute values ignores the negative sign of -4."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "-4 + 7 = 3."
+    }
+  ]
+}

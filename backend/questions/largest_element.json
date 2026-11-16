@@ -1,0 +1,89 @@
+{
+  "id": "largest_element",
+  "title": "Find the Largest Element in an Array",
+  "topic": "Arrays",
+  "difficulty": "easy",
+  "description": "Read N integers and print the largest value. The first input value is N, followed by N integers.",
+  "input_format": "First integer N (1 ≤ N ≤ 1000), followed by N space-separated integers.",
+  "output_format": "Print the largest integer.",
+  "examples": [
+    {
+      "input": "5\n3 7 2 9 5",
+      "output": "9"
+    },
+    {
+      "input": "3\n-4 -2 -9",
+      "output": "-2"
+    }
+  ],
+  "test_cases": [
+    {
+      "input": "5\n3 7 2 9 5",
+      "expected_output": "9"
+    },
+    {
+      "input": "3\n-4 -2 -9",
+      "expected_output": "-2"
+    },
+    {
+      "input": "1\n10",
+      "expected_output": "10"
+    },
+    {
+      "input": "4\n1 1 1 1",
+      "expected_output": "1"
+    },
+    {
+      "input": "5\n0 -5 8 2 3",
+      "expected_output": "8"
+    }
+  ],
+  "starter_code": {
+    "Python": "n = int(input())\nnumbers = list(map(int, input().split()))\nlargest = numbers[0]\nfor number in numbers[1:n]:\n    if number > largest:\n        largest = number\nprint(largest)",
+    "C": "#include <stdio.h>\nint main(void) {\n    int n, value, largest;\n    if (scanf(\"%d\", &n) != 1 || n < 1) return 0;\n    scanf(\"%d\", &largest);\n    for (int i = 1; i < n; i++) {\n        scanf(\"%d\", &value);\n        if (value > largest) largest = value;\n    }\n    printf(\"%d\\n\", largest);\n    return 0;\n}",
+    "C++": "#include <iostream>\nusing namespace std;\nint main() {\n    int n, value, largest;\n    if (!(cin >> n) || n < 1) return 0;\n    cin >> largest;\n    for (int i = 1; i < n; i++) {\n        cin >> value;\n        if (value > largest) largest = value;\n    }\n    cout << largest << endl;\n    return 0;\n}",
+    "Java": "import java.util.Scanner;\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        int largest = sc.nextInt();\n        for (int i = 1; i < n; i++) {\n            int value = sc.nextInt();\n            if (value > largest) largest = value;\n        }\n        System.out.println(largest);\n        sc.close();\n    }\n}"
+  },
+  "learning_content": {
+    "title": "Arrays and traversal",
+    "intro": "An array stores multiple values in indexed positions. Initialize the current maximum with the first element, then visit the remaining elements and update it when a larger value appears.",
+    "points": [
+      "Read the array length N.",
+      "Read the N values and initialize largest from the first value.",
+      "Traverse the remaining values once.",
+      "Update largest whenever a bigger value is found.",
+      "Print largest after the traversal."
+    ],
+    "complexity": "O(n) time · O(1) extra space",
+    "note": "Each value is compared at most once; the algorithm stores only the current maximum."
+  },
+  "quiz": [
+    {
+      "question": "Why should largest be initialized from the first array element instead of always starting at zero?",
+      "options": [
+        {
+          "value": "A",
+          "label": "To handle arrays containing only negative numbers",
+          "feedback": "A zero starting value would incorrectly exceed every negative element."
+        },
+        {
+          "value": "B",
+          "label": "To make the array length equal to zero",
+          "feedback": "Initialization does not change the array length."
+        },
+        {
+          "value": "C",
+          "label": "To skip comparing all later elements",
+          "feedback": "The remaining elements still need to be checked."
+        },
+        {
+          "value": "D",
+          "label": "To sort the array automatically",
+          "feedback": "Tracking a maximum does not reorder the array."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "Starting from the first actual value works for positive, zero and negative-only arrays."
+    }
+  ]
+}

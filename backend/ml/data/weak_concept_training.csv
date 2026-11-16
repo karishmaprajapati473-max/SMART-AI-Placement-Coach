@@ -1,0 +1,149 @@
+language,topic,diagnostic_message,code_snippet,weak_concept
+Python,Loops,"File ""main.py"", line 4; SyntaxError: invalid syntax","for i in range(5)
+    print(i",Syntax & Indentation
+Python,Conditions,IndentationError: expected an indented block after 'if' statement,"if score > 10:
+print(score)",Syntax & Indentation
+Python,Functions,SyntaxError: '(' was never closed,"def add(a, b:
+    return a + b",Syntax & Indentation
+C,Loops,main.c:8: expected ';' before 'return',"int i = 0
+return i;",Syntax & Indentation
+C,Conditions,error: expected expression before 'else',"if (x > 0) { printf(""yes""); } else",Syntax & Indentation
+C++,Functions,error: expected ';' after class definition,class Demo { public: void run() {} },Syntax & Indentation
+C++,Arrays,error: expected primary-expression before ']' token,int values[ ];,Syntax & Indentation
+Java,Conditions,error: ';' expected,"int score = 10
+System.out.println(score);",Syntax & Indentation
+Java,Functions,error: illegal start of expression,public static void main(String[] args) { int x = ; },Syntax & Indentation
+Java,Loops,error: reached end of file while parsing,for (int i=0; i<5; i++) { System.out.println(i);,Syntax & Indentation
+Python,Strings,SyntaxError: unterminated string literal,"message = ""hello
+print(message)",Syntax & Indentation
+C,Basic Programming,error: expected ')' before ';' token,"printf(""%d"", value;",Syntax & Indentation
+Python,Basic Programming,NameError: name 'total' is not defined,print(total),Variables & Naming
+Python,Loops,NameError: name 'counter' is not defined,"while counter < 5:
+    counter += 1",Variables & Naming
+Python,Functions,NameError: name 'calculate_sum' is not defined,"answer = calculate_sum(2, 3)",Variables & Naming
+C,Basic Programming,error: 'result' undeclared (first use in this function),"printf(""%d"", result);",Variables & Naming
+C,Loops,error: 'index' undeclared (first use in this function),for (index = 0; index < n; index++) {},Variables & Naming
+C++,Arrays,error: 'largest' was not declared in this scope,cout << largest;,Variables & Naming
+C++,Functions,error: 'findTotal' was not declared in this scope,"cout << findTotal(4, 5);",Variables & Naming
+Java,Basic Programming,cannot find symbol; symbol: variable marks,System.out.println(marks);,Variables & Naming
+Java,Loops,cannot find symbol; symbol: variable count,count++;,Variables & Naming
+Java,Functions,cannot find symbol; symbol: method calculate(int),int value = calculate(5);,Variables & Naming
+Python,Arrays,NameError: name 'numbers' is not defined,print(numbers[0]),Variables & Naming
+C,Conditions,error: 'maximum' undeclared,if (value > maximum) maximum = value;,Variables & Naming
+Python,Basic Programming,ValueError: invalid literal for int() with base 10: 'abc',number = int(input()),Data Types & Input Handling
+Python,Basic Programming,"TypeError: can only concatenate str (not ""int"") to str","age = input()
+print(""Age: "" + 20)",Data Types & Input Handling
+Python,Arrays,TypeError: 'int' object is not iterable,"values = list(map(int, 10))",Data Types & Input Handling
+C,Basic Programming,warning: format '%d' expects argument of type 'int',"scanf(""%d"", name);",Data Types & Input Handling
+C,Basic Programming,runtime error: input conversion failed for integer,"scanf(""%d"", &value); /* input: hello */",Data Types & Input Handling
+C++,Basic Programming,std::invalid_argument: stoi,int number = stoi(inputText);,Data Types & Input Handling
+C++,Basic Programming,error: cannot convert 'std::string' to 'int',int age = name;,Data Types & Input Handling
+Java,Basic Programming,InputMismatchException: input does not match expected Integer,int value = scanner.nextInt();,Data Types & Input Handling
+Java,Basic Programming,"NumberFormatException: For input string: ""abc""",int value = Integer.parseInt(text);,Data Types & Input Handling
+Java,Arrays,incompatible types: String cannot be converted to int,"int[] values = {""2"", ""3""};",Data Types & Input Handling
+Python,Functions,TypeError: unsupported operand type(s) for +: 'int' and 'str',"result = 5 + ""3""",Data Types & Input Handling
+C++,Loops,error: invalid operands to binary expression ('int' and 'std::string'),count += inputText;,Data Types & Input Handling
+Python,Arrays,IndexError: list index out of range,"values = [2, 4]
+print(values[2])",Arrays & Indexing
+Python,Arrays,IndexError: string index out of range,"word = ""cat""
+print(word[3])",Arrays & Indexing
+Python,Searching,IndexError: list assignment index out of range,"items = []
+items[0] = 10",Arrays & Indexing
+C,Arrays,runtime error: index 5 out of bounds for type 'int [5]',"int a[5];
+printf(""%d"", a[5]);",Arrays & Indexing
+C,Arrays,AddressSanitizer: stack-buffer-overflow on address,"int values[3];
+values[4] = 7;",Arrays & Indexing
+C++,Arrays,runtime error: reference binding to null pointer,"vector<int> v;
+int x = v[0];",Arrays & Indexing
+C++,Arrays,vector::_M_range_check: __n (which is 4) >= this->size() (which is 4),"vector<int> values(4);
+cout << values.at(4);",Arrays & Indexing
+Java,Arrays,ArrayIndexOutOfBoundsException: Index 5 out of bounds for length 5,"int[] values = new int[5];
+System.out.println(values[5]);",Arrays & Indexing
+Java,Strings,"StringIndexOutOfBoundsException: index 4, length 4","String word = ""code"";
+word.charAt(4);",Arrays & Indexing
+Python,Searching,IndexError: pop index out of range,"items = [1]
+items.pop(2)",Arrays & Indexing
+C,Loops,runtime error: heap-buffer-overflow,"int *p = malloc(2 * sizeof(int));
+p[3] = 9;",Arrays & Indexing
+Java,Loops,ArrayIndexOutOfBoundsException while iterating array,for(int i=0; i<=values.length; i++) { System.out.println(values[i]); },Arrays & Indexing
+Python,Loops,Execution timed out after 20 seconds,"i = 0
+while i < 10:
+    print(i)",Loops & Iteration
+Python,Loops,Time Limit Exceeded: program did not terminate,"while True:
+    pass",Loops & Iteration
+C,Loops,Execution timeout: process exceeded time limit,"int i = 0;
+while (i >= 0) { i++; }",Loops & Iteration
+C,Loops,Time Limit Exceeded on test case 3,for (int i=0; i<=n; i--) { work(); },Loops & Iteration
+C++,Loops,program timed out; possible non-terminating loop,"int i = 0;
+while (i < 10) { cout << i; }",Loops & Iteration
+C++,Searching,Time Limit Exceeded: excessive repeated iteration,for (int i=0; i<n; i++) { for (int j=0; j<n*n; j++) {} },Loops & Iteration
+Java,Loops,Execution timed out: infinite loop suspected,"int i = 0;
+while (i < 5) { System.out.println(i); }",Loops & Iteration
+Java,Loops,Time Limit Exceeded while processing input,while (scanner.hasNextInt()) { int x = scanner.nextInt(); } /* input stream not consumed */,Loops & Iteration
+Python,Arrays,timeout: iteration exceeded execution time limit,"for value in values:
+    while True:
+        process(value)",Loops & Iteration
+C,Basic Programming,Time limit exceeded; loop condition never became false,while (n != 0) { n = n + 1; },Loops & Iteration
+Python,Searching,TLE: too many repeated comparisons,"for x in data:
+    for y in data:
+        for z in data: pass",Loops & Iteration
+Java,Searching,process exceeded 20 second execution timeout,for(int i=0; i<n; i++) { for(int j=0; j<n; j++) { for(int k=0;k<n;k++) {} } },Loops & Iteration
+Python,Recursion,RecursionError: maximum recursion depth exceeded,"def solve(n):
+    return solve(n)
+solve(3)",Recursion
+Python,Recursion,RecursionError: maximum recursion depth exceeded in comparison,"def factorial(n):
+    return n * factorial(n-1)",Recursion
+C,Recursion,AddressSanitizer: stack-overflow,int solve(int n) { return solve(n); },Recursion
+C,Recursion,Segmentation fault (stack overflow in recursive calls),int f(int n) { return 1 + f(n); },Recursion
+C++,Recursion,stack overflow detected during recursive execution,int search(int n) { return search(n); },Recursion
+C++,Recursion,AddressSanitizer: stack-overflow on address,void visit(int n) { visit(n - 1); },Recursion
+Java,Recursion,StackOverflowError at Main.factorial(Main.java:4),static int factorial(int n) { return n * factorial(n - 1); },Recursion
+Java,Recursion,java.lang.StackOverflowError: recursive call chain,static void repeat() { repeat(); },Recursion
+Python,Recursion,maximum recursion depth exceeded while calling a Python object,"def walk(node):
+    return walk(node)
+walk(1)",Recursion
+Java,Recursion,StackOverflowError caused by missing recursive base case,static int fib(int n) { return fib(n-1) + fib(n-2); },Recursion
+C,Recursion,stack overflow: recursion does not approach base case,int count(int n) { if(n == 0) return 0; return count(n + 1); },Recursion
+Python,Recursion,RecursionError: maximum recursion depth exceeded while calling a Python object,"def countdown(n):
+    return countdown(n - 1)
+countdown(5)",Recursion
+Python,Functions,TypeError: calculate() missing 1 required positional argument: 'b',"def calculate(a, b): return a+b
+calculate(5)",Function Usage
+Python,Functions,TypeError: 'NoneType' object is not callable,"result = None
+result()",Function Usage
+Python,Functions,TypeError: add() takes 2 positional arguments but 3 were given,"def add(a,b): return a+b
+add(1,2,3)",Function Usage
+C,Functions,error: too few arguments to function 'sum',"int sum(int a, int b);
+int x = sum(5);",Function Usage
+C,Functions,error: conflicting types for 'calculate',"int calculate(int x);
+float calculate(float x);",Function Usage
+C++,Functions,no matching function for call to 'printValue()',"void printValue(int x);
+printValue();",Function Usage
+C++,Functions,"candidate expects 2 arguments, 1 provided","int add(int a, int b);
+add(4);",Function Usage
+Java,Functions,method add in class Main cannot be applied to given types,"static int add(int a, int b) { return a+b; }
+add(4);",Function Usage
+Java,Functions,non-static method calculate() cannot be referenced from a static context,"void calculate() {}
+static void main(String[] args) { calculate(); }",Function Usage
+Python,Functions,TypeError: greet() got an unexpected keyword argument 'user',"def greet(name): print(name)
+greet(user=""Sam"")",Function Usage
+C,Functions,warning: implicit declaration of function 'calculate',int main() { return calculate(2); },Function Usage
+Java,Functions,missing return statement in non-void method,static int getValue() { int x = 5; },Function Usage
+Python,Sorting,Time Limit Exceeded: sorting routine exceeded time budget,"for i in range(n):
+    for j in range(n):
+        compare_all_pairs(i,j)",Algorithm Efficiency
+Python,Searching,timeout: solution performed too many comparisons,"for item in items:
+    for candidate in items:
+        if item == candidate: pass",Algorithm Efficiency
+C,Sorting,Time Limit Exceeded on large input; quadratic loop detected,"for(int i=0;i<n;i++) for(int j=0;j<n;j++) compare(a[i],a[j]);",Algorithm Efficiency
+C,Searching,execution timeout due to repeated linear scans,for(int q=0;q<m;q++) for(int i=0;i<n;i++) search(a[i]);,Algorithm Efficiency
+C++,Sorting,process killed after CPU time limit; excessive nested loops,for(int i=0;i<n;i++) for(int j=0;j<n;j++) for(int k=0;k<n;k++) {},Algorithm Efficiency
+C++,Arrays,Time Limit Exceeded: repeated vector erase in a loop,for(int i=0;i<v.size();i++) v.erase(v.begin());,Algorithm Efficiency
+Java,Sorting,Time Limit Exceeded: algorithm too slow for maximum constraints,"for(int i=0;i<n;i++) for(int j=0;j<n;j++) if(a[i]>a[j]) swap(a,i,j);",Algorithm Efficiency
+Java,Searching,execution exceeded 20 seconds with nested scans,"for(int target: targets) { for(int value: values) { check(target,value); } }",Algorithm Efficiency
+Python,Basic Programming,TLE: redundant repeated computation in nested loops,"for _ in range(n):
+    for _ in range(n):
+        expensive_operation()",Algorithm Efficiency
+C,Arrays,time limit exceeded while repeatedly copying array contents,"for(int i=0;i<n;i++) { copy_array(a,b,n); }",Algorithm Efficiency
+C++,Searching,CPU limit exceeded due to O(n squared) scan,for(auto x:a) for(auto y:a) if(x==y) count++;,Algorithm Efficiency
+Java,Loops,Time Limit Exceeded on worst-case input size,for(int i=0;i<n*n;i++) process(i);,Algorithm Efficiency

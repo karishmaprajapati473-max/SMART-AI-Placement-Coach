@@ -1,0 +1,88 @@
+{
+  "id": "positive_negative_zero",
+  "title": "Classify a Number",
+  "topic": "Conditions",
+  "difficulty": "easy",
+  "description": "Read one integer and print Positive if it is greater than zero, Negative if it is less than zero, or Zero if it equals zero.",
+  "input_format": "One integer.",
+  "output_format": "Print exactly Positive, Negative, or Zero.",
+  "examples": [
+    {
+      "input": "8",
+      "output": "Positive"
+    },
+    {
+      "input": "-3",
+      "output": "Negative"
+    }
+  ],
+  "test_cases": [
+    {
+      "input": "8",
+      "expected_output": "Positive"
+    },
+    {
+      "input": "-3",
+      "expected_output": "Negative"
+    },
+    {
+      "input": "0",
+      "expected_output": "Zero"
+    },
+    {
+      "input": "100",
+      "expected_output": "Positive"
+    },
+    {
+      "input": "-100",
+      "expected_output": "Negative"
+    }
+  ],
+  "starter_code": {
+    "Python": "number = int(input())\nif number > 0:\n    print(\"Positive\")\nelif number < 0:\n    print(\"Negative\")\nelse:\n    print(\"Zero\")",
+    "C": "#include <stdio.h>\nint main(void) {\n    int number;\n    if (scanf(\"%d\", &number) != 1) return 0;\n    if (number > 0) printf(\"Positive\\n\");\n    else if (number < 0) printf(\"Negative\\n\");\n    else printf(\"Zero\\n\");\n    return 0;\n}",
+    "C++": "#include <iostream>\nusing namespace std;\nint main() {\n    int number;\n    if (!(cin >> number)) return 0;\n    if (number > 0) cout << \"Positive\\n\";\n    else if (number < 0) cout << \"Negative\\n\";\n    else cout << \"Zero\\n\";\n    return 0;\n}",
+    "Java": "import java.util.Scanner;\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        int number = sc.nextInt();\n        if (number > 0) System.out.println(\"Positive\");\n        else if (number < 0) System.out.println(\"Negative\");\n        else System.out.println(\"Zero\");\n        sc.close();\n    }\n}"
+  },
+  "learning_content": {
+    "title": "Conditional statements",
+    "intro": "A condition lets a program choose one path based on whether a comparison is true or false. The branches must cover positive, negative and zero values.",
+    "points": [
+      "Read the integer.",
+      "Check whether it is greater than zero.",
+      "Otherwise check whether it is less than zero.",
+      "If neither condition is true, the value is zero."
+    ],
+    "complexity": "O(1) time · O(1) extra space",
+    "note": "Only a fixed number of comparisons are evaluated."
+  },
+  "quiz": [
+    {
+      "question": "For number = 0, which branch should run in the three-way classification?",
+      "options": [
+        {
+          "value": "A",
+          "label": "Positive branch",
+          "feedback": "Zero is not greater than zero."
+        },
+        {
+          "value": "B",
+          "label": "Negative branch",
+          "feedback": "Zero is not less than zero."
+        },
+        {
+          "value": "C",
+          "label": "Else branch",
+          "feedback": "Both greater-than-zero and less-than-zero conditions are false for zero."
+        },
+        {
+          "value": "D",
+          "label": "Both comparison branches",
+          "feedback": "An if/else-if chain selects only the first matching branch."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "Zero is neither greater than nor less than zero, so the final else branch handles it."
+    }
+  ]
+}
